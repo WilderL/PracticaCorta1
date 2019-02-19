@@ -1,0 +1,200 @@
+Inicio MiniJuegos
+	var menu
+	Repetir
+		Escribir(Menu)
+		Escribir(Opciones del menu)
+		leer(menu)
+		Segun(menu) Hacer
+			opcion 1:
+				llamar(ahorcado)
+			opcion 2:
+				llamar(basketball)
+			opcion 3:
+				llamar(juego de cartas)
+			opcion 4:
+				llamar(hanoi)
+			opcion 5:
+				menu = salir del programa
+		Fin Segun
+	Hasta Que(salir del programa)
+Fin
+
+Inincio basketball
+	var nombre1
+	var nombre2
+	var punteo1
+	var punteo2
+	var rondas
+	var opcion1
+	var opcion2
+	Repetir
+		Escribir(ingrese un nombre)
+		Leer nombre1
+		Escribir(ingrese un nombre)
+		Leer(nombre2)
+		Si(Forma aleatoria para ver quien va de primer y segundo jugador)Entoses
+			Escribir(El primer jugador es nombre1 o el nombre2)
+			Escribir(El segundo jugador es nombre1 o el nombre2)
+		Fin si
+		Para(rondas=1)hasta(rondas=n rondas)ConPaso(rondas++)Hacer
+			Escribir(opciones del jugador que esta atakando)
+			Leer(opcion1)
+			Escribir(opciones del jugador que esta defendiendo)
+			Leer(opcion2)
+			Si(dependiendo de las opciones1 y opciones2 que se tome se tendra que hacer el porcentaje para ver si anota o no)Entonses
+				Escribir(Has anotado una canasta)
+				punteo1 = punteo1 = punteo1 + el valor de la canasta de la opcion que tomo
+				Si(dependiendo de la opcion2 se sacara el porcentaje para versi saco falta o no y ver si lo anota o no )
+					Escribir(Has anotado una canasta gracias a la falta del otro jugador)
+					punteo1 = punteo1 + el valor de la falta
+				Sino
+					Escribir(has fallado la canasta gratis por la falta del otro jugador)
+				Fin si
+			Sino
+				Escribir(has fallado la canasta)
+				Si(dependiendo de la opcion2 se sacara el porcentaje para versi saco falta o no y ver si lo anota o no )
+					Escribir(Has anotado una canasta gracias a la falta del otro jugador)
+					punteo1 = punteo1 + el valor de la falta
+				Sino
+					Escribir(has fallado la canasta gratis por la falta del otro jugador)
+				Fin si
+			Fin si
+			repetir el mismo procedimiento lo que esta arriba lo unico cambiando de posicion el jugador que esta a la defensiva le toca al ofensiva
+			y al jugardor que le toco la ofensiva le toca a la defensica
+		Fin para
+		Escribir(cuanto punteo saco a cada jugador)
+		Si(el jugador1 tiene mas puntos que el jugador2)Entonses
+			Escribir(gana el jugador 1)
+		Sino
+			Escribir(gana el jugador 2)
+		Fin si
+	Hasta QUE(termine el juego o ya no quiera jugar de nuevo)
+Fin
+
+Inicio ahorcado
+	var palabraClave
+	var palabraBuscar
+	Escribir(descripcion del juego)
+	Escribir(pedir la palabra para que despues se tenga que adivinar)
+	Leer(palabraClave)
+	Repetir
+		Escribir(adivine la palabra)
+		Leer(palabraBuscar)
+		Si(es una letra = palabraBuscar)Entonses
+			Si(comparar la letra de la palabraBuscar con cada letra de la palabraClave)Entonses
+				Escribir(escribir las letras que se allan adivinado)
+			Sino
+				contDeFallos
+			Fin si
+		Sino(palabraBuscar = es una palabra)Entoses
+			si(comparar la palabra de la palabraBuscar con la palara de la palabraClave)Entonses
+				Escribir(adivino la palabra y fin del juego)
+			Sino
+				contDeFallos
+			Fin si
+		Fin si
+		Si(contDeFallos=1)
+			llamar(primera parte del hombre ahorcado)
+		Sino(contDeFallos=2)
+			llamar(primera parte del hombre ahorcado)
+			llamar(segunda parte del hombre ahorcado)
+		Sino(contDeFallos=3)
+			llamar(primera parte del hombre ahorcado)
+			llamar(segunda parte del hombre ahorcado)
+			llamar(tercera parte del hombre ahorcado)
+		Sino(contDeFallos=4)
+			llamar(primera parte del hombre ahorcado)
+			llamar(segunda parte del hombre ahorcado)
+			llamar(tercera parte del hombre ahorcado)
+			llamar(cuarta parte del hombre ahorcado)
+		Sino(contDeFallos=5)
+			llamar(primera parte del hombre ahorcado)
+			llamar(segunda parte del hombre ahorcado)
+			llamar(tercera parte del hombre ahorcado)
+			llamar(cuarta parte del hombre ahorcado)
+			llamar(ultima parte del hombre ahorcado)
+			Escribir(fin del juego)
+		Fin si
+	Hasta Que(fin del juego)
+Fin
+
+Inicio primera parte del hombre ahorcado
+	Escribir(la soga y donde se figa la soga)
+Fin
+
+Inicio segunda parte del hombre ahorcado
+	Escribir(la cabeza del hombre)
+Fin
+
+Inicio tercera parte del hombre ahorcado
+	Escribir(el cuello y las manos)
+Fin
+
+Inicio cuarta parte del hombre ahorcado
+	Escribir(el pecho y el estomago)
+Fin
+
+Inicio ultima parte del hombre ahorcado
+	Escribir(los pies)
+Fin
+
+Inicio juego de cartas
+	var dinero
+	var apostar
+	var primeraCarta
+	var segundaCarta
+	var terceraCarta
+	Escribir(descripcion del juego)
+	Escribir(dinero inicial)
+	Leer dinero
+	Repetir	
+		primeraCarta = valor de la carta aleatoria
+		segundaCarta = valor de la carta aleatoria sin repetir a la primeraCarta
+		Escribir(primeraCarta)
+		Escribir(segundaCarta)
+		Escribir(pedir cuanto quiere apostar)
+		Leer(apostar)
+		terceraCarta = valor de la carta aleatoria sin repetir a la primeraCarta ni a la segundaCarta
+		Escribir(terceraCarta)
+		Si(primeraCarta > terceraCarta > segundaCarta o primeraCarta < tereceraCarta < segundaCarta)Entonses
+			dinero = dinero + apostar
+		SiNo
+			dinero = dinero - apostar
+		Fin si
+	Hasta Que(Se quede sin dinero o ya no quiera seguir apostando)
+Fin
+
+Inicio hanoi
+	var dificultad
+	Escribir(Descripcion del juego)
+	Escribir(pedir al usuario cual nivel de dificultad quiere)
+	Leer(dificuldad)
+	Segun(dificuldad) Hacer
+		opcion 2:
+			llamar(nivel2)
+		opcion 3:
+			llamar(nivel3)
+		opcion 4:
+			llamar(nivel4)
+		opcion 5:
+			llamar(nivel5)
+		opcion 6:
+			llamar(nivel6)
+		opcion 7:
+			llamar(nivel7)
+		opcion 8:
+			llamar(nivel8)
+		opcion 9:
+			llamar(nivel9)
+		opcion 10:
+			llamar(nivel10)
+	Fin Segun
+Fin
+
+Inicio nivel2
+	var discos[2]
+	var palosVerticales[3,2]
+	discos[0] = el disco mas pequeño
+	discos[1] = el segundo disco mas pequeño
+		
+Fin
